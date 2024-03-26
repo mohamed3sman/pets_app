@@ -3,11 +3,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:pets_app/Core/theme/app_theme.dart';
 import 'package:pets_app/Core/utils/service_locator.dart';
-import 'package:pets_app/Features/BottomNavBar/bottom_nav_bar.dart';
 import 'package:pets_app/Features/Cats/presentation/controller/SimilarCatsImagesCubit/similar_cats_images_cubit.dart';
 import 'package:pets_app/Features/Dogs/presentation/controller/similarDogsImageList/similar_dogs_images_cubit.dart';
 import 'package:pets_app/Features/Favorit/presentation/controller/FavCatCubit/favorit_cubit.dart';
 import 'package:pets_app/Features/Favorit/presentation/controller/FavDogCubit/favorit_dogs_cubit.dart';
+import 'package:pets_app/Features/splash_view/splash_view.dart';
 import 'package:pets_app/firebase_options.dart';
 
 void main() async {
@@ -45,7 +45,7 @@ class MyApp extends StatelessWidget {
         // locale: DevicePreview.locale(context),
         // builder: DevicePreview.appBuilder,
         theme: lightMood,
-        home: const BottomBarScreen(),
+        home: const SplashView(),
       ),
     );
   }

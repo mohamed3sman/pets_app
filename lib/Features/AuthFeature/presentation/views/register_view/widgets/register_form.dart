@@ -8,6 +8,7 @@ import 'package:pets_app/Features/AuthFeature/presentation/views/register_view/w
 import 'package:pets_app/core/utils/app_styles.dart';
 import 'package:pets_app/core/utils/colors.dart';
 import 'package:pets_app/core/widgets/custom_button.dart';
+import 'package:pets_app/core/widgets/custom_loading_indicator.dart';
 import 'package:pets_app/core/widgets/custom_text_field.dart';
 import 'package:pets_app/core/widgets/snack_bar.dart';
 import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
@@ -129,12 +130,10 @@ class _RegisterFormState extends State<RegisterForm> {
               inAsyncCall: isLoading,
               color: primaryColor,
               progressIndicator: const SizedBox(
-                width: 25,
-                height: 25,
-                child: CircularProgressIndicator(
-                  color: Colors.white,
-                ),
-              ),
+                  width: 25,
+                  height: 25,
+                  child: CustomLoadingIndicator(
+                      hight: 25, loadingImg: 'assets/images/loading.json')),
               child: CustomButton(
                   text: isLoading == true ? '' : 'Register',
                   onPressed: () async {

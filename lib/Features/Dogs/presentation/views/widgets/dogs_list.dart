@@ -16,11 +16,12 @@ class DogsList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    int crossAxisCount = (MediaQuery.of(context).size.width / 150).round();
+    int crossAxisCount = (MediaQuery.of(context).size.width / 170).round();
     return BlocBuilder<DogsViewCubit, DogsViewState>(
       builder: (context, state) {
         if (state is DogsBreedsLoaded) {
           return MasonryGridView.builder(
+            padding: EdgeInsets.zero,
             shrinkWrap: true,
             physics: const NeverScrollableScrollPhysics(),
             itemCount: state.dogsBreedsList.length,

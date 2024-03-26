@@ -16,13 +16,14 @@ class CatsList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    int crossAxisCount = (MediaQuery.of(context).size.width / 150).round();
+    int crossAxisCount = (MediaQuery.of(context).size.width / 170).round();
     return BlocBuilder<CatsBreedsCubit, CatsBreedsState>(
       builder: (context, state) {
         if (state is CatsBreedsLoaded) {
           return FadeInUp(
             child: MasonryGridView.builder(
               shrinkWrap: true,
+              padding: EdgeInsets.zero,
               physics: const NeverScrollableScrollPhysics(),
               itemCount: state.catsBreedsList.length,
               gridDelegate: SliverSimpleGridDelegateWithFixedCrossAxisCount(

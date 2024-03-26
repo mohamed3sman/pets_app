@@ -17,7 +17,7 @@ class FavoritDogsList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    int crossAxisCount = (MediaQuery.of(context).size.width / 150).round();
+    int crossAxisCount = (MediaQuery.of(context).size.width / 170).round();
 
     return BlocBuilder<FavoritDogsCubit, FavoritDogsState>(
       builder: (context, state) {

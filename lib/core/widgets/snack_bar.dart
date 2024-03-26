@@ -5,7 +5,7 @@ void showSnackBar(context, {required Color color, required String message}) {
   ScaffoldMessenger.of(context).showSnackBar(
     SnackBar(
       behavior: SnackBarBehavior.floating,
-      duration: const Duration(milliseconds: 500),
+      duration: const Duration(milliseconds: 1500),
       margin: const EdgeInsets.symmetric(horizontal: 50, vertical: 10),
       shape: const RoundedRectangleBorder(
           borderRadius: BorderRadius.all(Radius.circular(25))),

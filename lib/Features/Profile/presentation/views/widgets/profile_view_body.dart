@@ -7,6 +7,7 @@ import 'package:pets_app/Core/utils/app_styles.dart';
 import 'package:pets_app/Features/AuthFeature/presentation/views/login_view/login_view.dart';
 import 'package:pets_app/core/widgets/custom_button.dart';
 import 'package:pets_app/core/widgets/custom_text_field.dart';
+import 'package:pets_app/core/widgets/snack_bar.dart';
 import 'curve_and_image.dart';
 import 'custom_list_tile.dart';
 
@@ -224,6 +225,9 @@ class _ProfileViewBodyState extends State<ProfileViewBody> {
                         userName = _controller.text;
                         _setParameters();
                         Navigator.pop(context);
+                        showSnackBar(context,
+                            color: Colors.green,
+                            message: 'Name changed successfully');
                       })
                 ],
               ),

@@ -32,13 +32,13 @@ class _FavoritViewState extends State<FavoritView> {
         builder: (context, state) {
           if (state is AllFavoritEmpty) {
             return Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 20),
+              padding: const EdgeInsets.only(left: 20, right: 20, bottom: 140),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Lottie.asset(
                     'assets/images/search.json',
-                    width: 200,
+                    width: 270,
                     fit: BoxFit.contain,
                   ),
                   Text(

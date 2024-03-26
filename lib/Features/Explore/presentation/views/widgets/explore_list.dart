@@ -14,7 +14,7 @@ class ExploreList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    int crossAxisCount = (MediaQuery.of(context).size.width / 150).round();
+    int crossAxisCount = (MediaQuery.of(context).size.width / 170).round();
 
     return BlocBuilder<ExploreCubit, ExploreState>(
       builder: (context, state) {

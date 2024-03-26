@@ -10,7 +10,7 @@ class RegisterViewBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(left: 16, right: 16, top: 70),
+      padding: const EdgeInsets.only(left: 16, right: 16, top: 30),
       child: SingleChildScrollView(
         child: Column(
           children: [

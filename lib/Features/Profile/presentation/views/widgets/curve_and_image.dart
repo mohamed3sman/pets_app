@@ -7,6 +7,7 @@ import 'package:lottie/lottie.dart';
 import 'package:pets_app/Features/Profile/presentation/views/widgets/picking_image_list_tile.dart';
 import 'package:pets_app/Features/Profile/presentation/views/widgets/profile_image_full.dart';
 import 'package:pets_app/core/utils/colors.dart';
+import 'package:pets_app/core/widgets/snack_bar.dart';
 import 'rounded_curve.dart';
 import 'package:image_picker/image_picker.dart';
 
@@ -96,19 +97,13 @@ class _CurveAndImageState extends State<CurveAndImage> {
       print('Image uploaded to Firebase Storage: $imageUrl');
 
       // Show a message indicating successful upload
-      ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(
-          content: Text('Image uploaded to Firebase Storage'),
-        ),
-      );
+      showSnackBar(context,
+          color: Colors.green, message: 'Image changed successfully');
     } catch (error) {
       // Handle any errors that occur during image upload
       print('Error uploading image: $error');
-      ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(
-          content: Text('Failed to upload image to Firebase Storage'),
-        ),
-      );
+      showSnackBar(context,
+          color: Colors.red, message: 'Failed to change image');
     }
   }
 

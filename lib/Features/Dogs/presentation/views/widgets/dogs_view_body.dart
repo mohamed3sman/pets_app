@@ -13,7 +13,7 @@ class DogsViewBody extends StatelessWidget {
       physics: const BouncingScrollPhysics(),
       slivers: [
         SliverAppBar(
-          toolbarHeight: 70,
+          toolbarHeight: 60,
           floating: false,
           centerTitle: true,
           pinned: false,
@@ -24,7 +24,10 @@ class DogsViewBody extends StatelessWidget {
           }),
         ),
         const SliverToBoxAdapter(
-          child: DogsList(),
+          child: Padding(
+            padding: EdgeInsets.only(top: 16),
+            child: DogsList(),
+          ),
         )
       ],
     );
