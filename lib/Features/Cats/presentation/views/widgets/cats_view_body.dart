@@ -13,6 +13,7 @@ class CatsViewBody extends StatelessWidget {
       physics: const BouncingScrollPhysics(),
       slivers: [
         SliverAppBar(
+          automaticallyImplyLeading: false,
           toolbarHeight: 60,
           floating: false,
           centerTitle: true,

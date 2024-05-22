@@ -27,7 +27,9 @@ class _CustomSearchTextFieldState extends State<CustomSearchTextField> {
         children: [
           Expanded(
             child: Container(
-              padding: const EdgeInsets.only(left: 16),
+              padding: const EdgeInsets.only(
+                left: 16,
+              ),
               child: !_folded
                   ? TextField(
                       controller: myController,
