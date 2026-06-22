@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:pets_app/Core/widgets/grediant_button.dart';
 import 'package:pets_app/Features/Cats/data/Models/CatsModels/cats_model.dart';
 import 'package:pets_app/Features/Cats/presentation/views/widgets/cat_characteristics_list.dart';
-import 'package:pets_app/Features/Cats/presentation/views/widgets/similar_cats_Images_list.dart';
+import 'package:pets_app/Features/Cats/presentation/views/widgets/similar_cats_images_list.dart';
 import 'package:pets_app/Features/Favorit/presentation/views/widgets/cats_favorit_button.dart';
 import 'package:pets_app/core/utils/app_styles.dart';
 import 'package:pets_app/core/utils/colors.dart';

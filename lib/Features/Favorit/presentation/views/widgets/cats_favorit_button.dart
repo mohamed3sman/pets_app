@@ -24,7 +24,7 @@ class _CatsFavoritButtonState extends State<CatsFavoritButton> {
       width: 40,
       height: 40,
       decoration: BoxDecoration(
-          color: Colors.grey.withOpacity(.4),
+          color: Colors.grey.withValues(alpha: .4),
           borderRadius: BorderRadius.circular(16)),
       child: Center(
           child: IconButton(

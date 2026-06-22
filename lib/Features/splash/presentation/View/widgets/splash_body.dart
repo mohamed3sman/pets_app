@@ -18,6 +18,7 @@ class _SplashBodyState extends State<SplashBody> {
 
   Future<void> navigateToHomeScreen() async {
     await Future.delayed(const Duration(seconds: 6));
+    if (!mounted) return;
     Navigator.of(context).push(
       MaterialPageRoute(
         builder: (context) => const LoginView(),

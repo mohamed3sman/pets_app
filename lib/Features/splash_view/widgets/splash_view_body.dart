@@ -18,6 +18,7 @@ class _SplashViewBodyState extends State<SplashViewBody> {
 
   void _initializeApp() async {
     await Future.delayed(const Duration(seconds: 3));
+    if (!mounted) return;
     Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) {
       return const LoginView();
     }));

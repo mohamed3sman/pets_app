@@ -1,7 +1,7 @@
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:cached_network_image/cached_network_image.dart';
-import 'package:gallery_saver/gallery_saver.dart';
+import 'package:gallery_saver_plus/gallery_saver.dart';
 import 'package:lottie/lottie.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:pets_app/Core/utils/app_styles.dart';
@@ -33,7 +33,7 @@ class ImageScreen extends StatelessWidget {
             fit: BoxFit.cover,
             placeholder: (BuildContext context, String url) => Container(
               color: Colors.white
-                  .withOpacity(0.5), // Set the color with transparency
+                  .withValues(alpha: 0.5), // Set the color with transparency
               height: 200,
               child: Center(
                 child: Lottie.asset(
@@ -56,6 +56,7 @@ class ImageScreen extends StatelessWidget {
     try {
       await Dio().download(imageUrl, path);
       await GallerySaver.saveImage(path, albumName: 'Pets App');
+      if (!context.mounted) return;
       showDialog(
         context: context,
         builder: (context) => AlertDialog(
@@ -79,6 +80,7 @@ class ImageScreen extends StatelessWidget {
       );
     } catch (e) {
       // Show an error dialog
+      if (!context.mounted) return;
       showDialog(
         context: context,
         builder: (context) => AlertDialog(

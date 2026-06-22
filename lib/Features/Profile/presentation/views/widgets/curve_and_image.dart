@@ -86,7 +86,7 @@ class _CurveAndImageState extends State<CurveAndImage> {
       setState(() {});
       if (cameraImage == true) {
         cameraImageUrl = imageUrl;
-        print('vvvvvvvvvvvvvvvvv$cameraImageUrl');
+        debugPrint('vvvvvvvvvvvvvvvvv$cameraImageUrl');
         setState(() {});
       } else {
         galleryImageUrl = imageUrl;
@@ -94,14 +94,16 @@ class _CurveAndImageState extends State<CurveAndImage> {
       }
 
       // Print the download URL (you can use it to display or store the image)
-      print('Image uploaded to Firebase Storage: $imageUrl');
+      debugPrint('Image uploaded to Firebase Storage: $imageUrl');
 
       // Show a message indicating successful upload
+      if (!mounted) return;
       showSnackBar(context,
           color: Colors.green, message: 'Image changed successfully');
     } catch (error) {
       // Handle any errors that occur during image upload
-      print('Error uploading image: $error');
+      debugPrint('Error uploading image: $error');
+      if (!mounted) return;
       showSnackBar(context,
           color: Colors.red, message: 'Failed to change image');
     }
@@ -125,7 +127,7 @@ class _CurveAndImageState extends State<CurveAndImage> {
     setState(() {
       _user = currentUser;
     });
-    print('Cccccccccccccurent user done');
+    debugPrint('Cccccccccccccurent user done');
   }
 
   void _setParameters() async {
@@ -141,9 +143,9 @@ class _CurveAndImageState extends State<CurveAndImage> {
       'username': username
     }).then((_) {
       setState(() {});
-      print('Parameters set successfully!');
+      debugPrint('Parameters set successfully!');
     }).catchError((error) {
-      print('Failed to set parameters: $error');
+      debugPrint('Failed to set parameters: $error');
     });
   }
 
@@ -160,9 +162,9 @@ class _CurveAndImageState extends State<CurveAndImage> {
             (querySnapshot.docs[0].data() as Map<String, dynamic>)['username'];
         profileImage =
             (querySnapshot.docs[0].data() as Map<String, dynamic>)['userimage'];
-        print('wwwwwwwwwwwwwwwwwww$profileImage');
+        debugPrint('wwwwwwwwwwwwwwwwwww$profileImage');
       });
-      print('uuuuuuuuuuuuuuuuuuser:$username');
+      debugPrint('uuuuuuuuuuuuuuuuuuser:$username');
     }
   }
 
@@ -186,7 +188,7 @@ class _CurveAndImageState extends State<CurveAndImage> {
         return _latestItemUrl = 'Sorry!!!!';
       }
     } catch (error) {
-      print('Error getting latest item: $error');
+      debugPrint('Error getting latest item: $error');
     }
 
     return null;
@@ -318,9 +320,9 @@ class _ProfileImageState extends State<ProfileImage> {
             return Lottie.asset('assets/images/loading.json');
           }
           Map photoData = snapshot.data!.data() as Map;
-          print(photoData);
+          debugPrint(photoData.toString());
           String? photoUrl = photoData['userimage'];
-          print('pppppppppppppppppp:$photoUrl');
+          debugPrint('pppppppppppppppppp:$photoUrl');
           return photoUrl != null
               ? GestureDetector(
                   onTap: () {

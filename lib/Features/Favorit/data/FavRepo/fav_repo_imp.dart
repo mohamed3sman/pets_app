@@ -1,6 +1,6 @@
 import 'package:dartz/dartz.dart';
 import 'package:dio/dio.dart';
-import 'package:pets_app/Core/errors/Failuer.dart';
+import 'package:pets_app/core/errors/failure.dart';
 import 'package:pets_app/Core/network/api_constance.dart';
 import 'package:pets_app/Core/utils/api_service.dart';
 import 'package:pets_app/Features/Favorit/data/FavRepo/fav_repo.dart';

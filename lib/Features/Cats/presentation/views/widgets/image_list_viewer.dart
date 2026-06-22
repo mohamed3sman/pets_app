@@ -2,7 +2,7 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
-import 'package:gallery_saver/gallery_saver.dart';
+import 'package:gallery_saver_plus/gallery_saver.dart';
 import 'package:lottie/lottie.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:pets_app/Core/utils/app_styles.dart';
@@ -70,6 +70,7 @@ class ImageListViewer extends StatelessWidget {
     try {
       await Dio().download(imageUrl, path);
       await GallerySaver.saveImage(path, albumName: 'Pets App');
+      if (!context.mounted) return;
       showDialog(
         context: context,
         builder: (context) => AlertDialog(
@@ -93,6 +94,7 @@ class ImageListViewer extends StatelessWidget {
       );
     } catch (e) {
       // Show an error dialog
+      if (!context.mounted) return;
       showDialog(
         context: context,
         builder: (context) => AlertDialog(

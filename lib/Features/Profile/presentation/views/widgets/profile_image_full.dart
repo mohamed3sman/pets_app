@@ -20,7 +20,7 @@ class ProfileImageFull extends StatelessWidget {
           fit: BoxFit.cover,
           placeholder: (BuildContext context, String url) => Container(
             color: Colors.white
-                .withOpacity(0.5), // Set the color with transparency
+                .withValues(alpha: 0.5), // Set the color with transparency
             height: 200,
             child: Center(
               child: Lottie.asset(

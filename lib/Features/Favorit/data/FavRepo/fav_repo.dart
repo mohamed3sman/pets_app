@@ -1,5 +1,5 @@
 import 'package:dartz/dartz.dart';
-import 'package:pets_app/Core/errors/Failuer.dart';
+import 'package:pets_app/core/errors/failure.dart';
 import 'package:pets_app/Features/Favorit/data/Models/favorit_models.dart';
 
 abstract class FavRepo {

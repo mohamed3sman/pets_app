@@ -22,12 +22,12 @@ class GradientButton extends StatelessWidget {
               end: Alignment.bottomCenter)),
       child: ElevatedButton(
         style: ButtonStyle(
-          elevation: MaterialStateProperty.all(0),
+          elevation: WidgetStateProperty.all(0),
           alignment: Alignment.center,
-          padding: MaterialStateProperty.all(
+          padding: WidgetStateProperty.all(
               const EdgeInsets.only(right: 50, left: 50, top: 8, bottom: 8)),
-          backgroundColor: MaterialStateProperty.all(Colors.transparent),
-          shape: MaterialStateProperty.all(
+          backgroundColor: WidgetStateProperty.all(Colors.transparent),
+          shape: WidgetStateProperty.all(
             RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(borderRadius)),
           ),

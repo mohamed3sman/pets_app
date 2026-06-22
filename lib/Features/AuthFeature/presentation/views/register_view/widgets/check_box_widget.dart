@@ -6,7 +6,7 @@ class CheckboxWidget extends StatefulWidget {
   const CheckboxWidget({super.key});
 
   @override
-  _CheckboxWidgetState createState() => _CheckboxWidgetState();
+  State<CheckboxWidget> createState() => _CheckboxWidgetState();
 }
 
 class _CheckboxWidgetState extends State<CheckboxWidget> {

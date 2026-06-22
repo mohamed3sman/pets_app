@@ -1,4 +1,4 @@
-import 'package:bloc/bloc.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:equatable/equatable.dart';
 import 'package:pets_app/Core/shared/shared_ids.dart';
 import 'package:pets_app/Features/Favorit/data/FavRepo/fav_repo.dart';

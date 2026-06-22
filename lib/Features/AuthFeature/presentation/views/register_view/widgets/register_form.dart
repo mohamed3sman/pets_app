@@ -142,6 +142,7 @@ class _RegisterFormState extends State<RegisterForm> {
                       setState(() {});
                       try {
                         await registerUser();
+                        if (!context.mounted) return;
                         showSnackBar(
                           context,
                           message: 'Account created successfully',
@@ -153,12 +154,14 @@ class _RegisterFormState extends State<RegisterForm> {
                         }));
                       } on FirebaseAuthException catch (e) {
                         if (e.code == 'email-already-in-use') {
+                          if (!context.mounted) return;
                           showSnackBar(
                             context,
                             message: 'Email already exists',
                             color: Colors.red,
                           );
                         } else if (e.code == 'weak-password') {
+                          if (!context.mounted) return;
                           showSnackBar(
                             context,
                             message: 'The password is too weak',
@@ -166,6 +169,7 @@ class _RegisterFormState extends State<RegisterForm> {
                           );
                         }
                       } catch (e) {
+                        if (!context.mounted) return;
                         showSnackBar(
                           context,
                           message: 'There was an error',

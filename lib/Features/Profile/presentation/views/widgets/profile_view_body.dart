@@ -2,7 +2,6 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:pets_app/Core/utils/app_styles.dart';
 import 'package:pets_app/Features/AuthFeature/presentation/views/login_view/login_view.dart';
 import 'package:pets_app/core/widgets/custom_button.dart';
@@ -61,7 +60,7 @@ class _ProfileViewBodyState extends State<ProfileViewBody> {
         return _latestItemUrl = 'Sorry!!!!';
       }
     } catch (error) {
-      print('Error getting latest item: $error');
+      debugPrint('Error getting latest item: $error');
     }
 
     return null;
@@ -80,9 +79,9 @@ class _ProfileViewBodyState extends State<ProfileViewBody> {
       'username': userName
     }).then((_) {
       setState(() {});
-      print('Parameters set successfully!');
+      debugPrint('Parameters set successfully!');
     }).catchError((error) {
-      print('Failed to set parameters: $error');
+      debugPrint('Failed to set parameters: $error');
     });
   }
 
@@ -91,12 +90,12 @@ class _ProfileViewBodyState extends State<ProfileViewBody> {
       await _auth.signOut();
       // Navigate to login or any other screen after sign-out
     } catch (e) {
-      print('Error signing out: $e');
+      debugPrint('Error signing out: $e');
     }
   }
 
   void _getUserData() async {
-    print('${_user!.email}');
+    debugPrint('${_user!.email}');
     QuerySnapshot querySnapshot = await _firestore
         .collection('users')
         .where('email', isEqualTo: _user!.email)
@@ -173,6 +172,7 @@ class _ProfileViewBodyState extends State<ProfileViewBody> {
                       GestureDetector(
                           onTap: () async {
                             await _signOut();
+                            if (!context.mounted) return;
                             Navigator.pushReplacement(
                               context,
                               MaterialPageRoute(

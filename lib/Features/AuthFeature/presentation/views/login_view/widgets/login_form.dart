@@ -101,18 +101,21 @@ class _LoginFormState extends State<LoginForm> {
                     setState(() {});
                     try {
                       await loginUser();
+                      if (!context.mounted) return;
                       Navigator.pushReplacement(context,
                           MaterialPageRoute(builder: (context) {
                         return const BottomBarScreen();
                       }));
                     } on FirebaseAuthException catch (e) {
                       if (e.code == 'user-not-found') {
+                        if (!context.mounted) return;
                         showSnackBar(
                           context,
                           message: 'User not found',
                           color: Colors.red,
                         );
                       } else if (e.code == 'wrong-password') {
+                        if (!context.mounted) return;
                         showSnackBar(
                           context,
                           message: 'The password is wrong',
@@ -120,6 +123,7 @@ class _LoginFormState extends State<LoginForm> {
                         );
                       }
                     } catch (e) {
+                      if (!context.mounted) return;
                       showSnackBar(
                         context,
                         message: 'There was an error',
