@@ -1,8 +1,6 @@
 <p align="center">
-  <img src="assets/images/icon.png" alt="Petopia Logo" width="120" height="120" style="border-radius: 20px;" />
+  <img src="assets/images/banner.png" alt="Petopia Banner" width="100%" />
 </p>
-
-<h1 align="center">🐾 Petopia</h1>
 
 <p align="center">
   <b>A beautiful Flutter app for exploring cat & dog breeds, discovering pet images, and managing your favorites.</b>
@@ -14,7 +12,6 @@
   <img src="https://img.shields.io/badge/State_Management-BLoC/Cubit-blue" alt="BLoC" />
   <img src="https://img.shields.io/badge/Backend-Firebase-FFCA28?logo=firebase&logoColor=black" alt="Firebase" />
   <img src="https://img.shields.io/badge/Architecture-Clean_Architecture-green" alt="Clean Architecture" />
-  <img src="https://img.shields.io/badge/License-MIT-yellow" alt="License" />
 </p>
 
 ---
@@ -259,12 +256,6 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 3. Commit your changes (`git commit -m 'Add some amazing feature'`)
 4. Push to the branch (`git push origin feature/amazing-feature`)
 5. Open a Pull Request
-
----
-
-## 📄 License
-
-This project is licensed under the MIT License — see the [LICENSE](LICENSE) file for details.
 
 ---
 
